@@ -1,4 +1,7 @@
+import "react-native-gesture-handler";
 import * as Font from "expo-font";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import AppLoading from "expo-app-loading";
 import React, { useState } from "react";
 
@@ -22,14 +25,17 @@ export default function App() {
   }
 
   return (
-    <View styles={styles.container}>
-      {/* Test Coding goes here */}
-      {/* try rtghe addsudidbub au;lbcauic aui;.c i
-      uibsiaudbicv a;bcasd
-      a;bsocbauiobsc a
-      asucbaubcuae
-       */}
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        {/* <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="suggestions" component={Suggestions} />
+        <Stack.Screen name="map" component={Map} /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
