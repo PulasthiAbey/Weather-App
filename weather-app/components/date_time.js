@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
+import moment from "moment-timezone";
 
 // days & months array
 const days = [
@@ -40,7 +41,7 @@ const WeatherItem = ({ title, value, unit }) => {
   );
 };
 
-const date_time = () => {
+const date_time = ({ current, lat, lon, timezone }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
@@ -82,17 +83,43 @@ const date_time = () => {
         </View>
         {/* weather item container */}
         <View style={styles.weatherItemContainer}>
-          <WeatherItem title="Humidity" value="79" unit="%" />
-          <WeatherItem title="Pressure" value="1.1" unit="bar" />
-          <WeatherItem title="Sunrise" value="06:00" unit="am" />
-          <WeatherItem title="Sunset" value="06:30" unit="pm" />
+          <WeatherItem
+            title="Humidity"
+            value={current ? current.humidity : ""}
+            unit="%"
+          />
+          <WeatherItem
+            title="Pressure"
+            value={current ? current.pressure : ""}
+            unit="hPA"
+          />
+          <WeatherItem
+            title="Sunrise"
+            value={
+              current
+                ? moment.tz(current.sunrise * 1000, timezone).format("HH:mm")
+                : ""
+            }
+            unit="am"
+          />
+          <WeatherItem
+            title="Sunset"
+            value={
+              current
+                ? moment.tz(current.sunset * 1000, timezone).format("HH:mm")
+                : ""
+            }
+            unit="pm"
+          />
         </View>
       </View>
 
       {/* latitude and location */}
       <View style={styles.rightAlign}>
-        <Text style={styles.timeZone}>Colombo, Sri Lanka</Text>
-        <Text style={styles.latLong}>4.22M 50E</Text>
+        <Text style={styles.timeZone}>{timezone}</Text>
+        <Text style={styles.latLong}>
+          {lat}M {lon}E
+        </Text>
       </View>
     </View>
   );
