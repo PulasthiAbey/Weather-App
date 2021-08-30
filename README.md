@@ -6,3 +6,5 @@
 4. `expo install react-native-gesture-handler`
 5. `npm install @react-navigation/native @react-navigation/native-stack`
 6. ``
+
+## Weather API is being used from public agent
