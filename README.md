@@ -8,4 +8,4 @@
 6. `npm install moment-timezone --save`
 
 ## Weather API is being used from public agent
-> Weather API used is the open weather. Checkout their [https://openweathermap.org/api](website) for more information
+> Weather API used is the open weather. Checkout their [website](https://openweathermap.org/api) for more information
