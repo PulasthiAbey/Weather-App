@@ -16,7 +16,7 @@ const weather_scroll = ({ weatherData }) => {
 };
 
 // scrolling component
-const CurrentTempE1 = (data) => {
+const CurrentTempEl = (data) => {
   if (data && data.weather) {
     const img = {
       uri:

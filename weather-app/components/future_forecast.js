@@ -18,7 +18,7 @@ const future_forecast = ({ data }) => {
 };
 
 //fetch the components
-const FutureForecastItem = ({ data }) => {
+const FutureForecastItem = ({ forecastItem }) => {
   const img = {
     uri:
       "http://openweathermap.org/img/wn/" +

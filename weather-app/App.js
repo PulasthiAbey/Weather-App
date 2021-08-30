@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import * as Location from "expo-location";
 
 import DateTime from "./components/date_time";
 import WeatherScroll from "./components/weather_scroll";
@@ -17,7 +18,7 @@ export default function App() {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
-        fetchDataFromApi("40.7128", "-74.0060");
+        fetchDataFromApi("6.9271", "79.8612");
         return;
       }
 
