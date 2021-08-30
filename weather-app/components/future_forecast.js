@@ -3,12 +3,16 @@ import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 
 const future_forecast = () => {
   return (
-    <View>
+    <View style={{ flexDirection: "row" }}>
+      <FutureForecastItem />
+      <FutureForecastItem />
+      <FutureForecastItem />
       <FutureForecastItem />
     </View>
   );
 };
 
+//fetch the components
 const FutureForecastItem = () => {
   const img = {
     uri:

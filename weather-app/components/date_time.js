@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 
 // weather item component to retrieve the data
@@ -15,6 +15,11 @@ const WeatherItem = ({ title, value, unit }) => {
 };
 
 function date_time() {
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+
+  useEffect(() => {}, []);
+  
   return (
     //   containers for the date and time functions in the app
     <View style={styles.container}>

@@ -12,6 +12,7 @@ const weather_scroll = () => {
   );
 };
 
+// scrolling component
 const CurrentTempE1 = () => {
   const img = {
     uri: "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@4x.png",
