@@ -3,6 +3,7 @@ import { GET_LON, GET_LAT, GET_WEATHER } from "./actions";
 const initialState = {
   latitude: "6.9271",
   longitude: "79.8612",
+  weather: [],
 };
 
 function userReducer(state = initialState, action) {
