@@ -6,7 +6,7 @@ const initialState = {
   weather: [],
 };
 
-function userReducer(state = initialState, action) {
+function apiCallReducer(state = initialState, action) {
   switch (action.type) {
     case GET_LAT:
       return { ...state, latitude: action.payload };
@@ -21,3 +21,5 @@ function userReducer(state = initialState, action) {
       return state;
   }
 }
+
+export default apiCallReducer;
