@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import * as Location from "expo-location";
 
-import DateTime from "./components/date_time";
-import WeatherScroll from "./components/weather_scroll";
+import DateTime from "./src/components/date_time";
+import WeatherScroll from "./src/components/weather_scroll";
 
 // api key
 const API_KEY = "49cc8c821cd2aff9af04c9f98c36eb74";
