@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import moment from "moment-timezone";
+import { useDispatch, useSelector } from "react-redux";
+import { getWeather } from "../redux/actions";
 
 // days & months array
 const days = [
@@ -30,6 +32,7 @@ const months = [
 
 // weather item component to retrieve the data
 const WeatherItem = ({ title, value, unit }) => {
+  
   return (
     <View style={styles.weatherItem}>
       <Text style={styles.weatherItemTitle}>{title}</Text>
