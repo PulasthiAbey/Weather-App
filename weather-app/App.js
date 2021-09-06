@@ -11,7 +11,7 @@ import { useDispatch, useSelector, Provider } from "react-redux";
 import { getWeather } from "./src/store/actions/weatherActions";
 import Form from "./src/components/Form";
 import Weather from "./src/components/Weather";
-import { store } from "./src/store/index.js";
+import store from "./src/store/index";
 
 const App = () => {
   const [search, setSearch] = useState("");
