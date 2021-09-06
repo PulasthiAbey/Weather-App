@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import moment from "moment-timezone";
 import { useDispatch, useSelector } from "react-redux";
-import { getWeather } from "../redux/actions";
+import { dateItem, timeItem, latitude, longitude } from "../redux/actions";
 
 // days & months array
 const days = [
@@ -43,9 +43,12 @@ const WeatherItem = ({ title, value, unit }) => {
   );
 };
 
-const date_time = ({ current, lat, lon, timezone }) => {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+const date_time = () => {
+  const current = weather.current;
+  const timezone = weather.timezone;
+
+  const { date, time } = useSelector((state) => state.settingUpDateReducer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setInterval(() => {
@@ -58,17 +61,18 @@ const date_time = ({ current, lat, lon, timezone }) => {
       const minute = time.getMinutes();
       const ampm = hour > 12 ? "PM" : "AM";
 
-      setTime(
+      let timeSet =
         (hoursIn12HourFormat < 10
           ? "0" + hoursIn12HourFormat
           : hoursIn12HourFormat) +
-          " : " +
-          (minute < 10 ? "0" + minute : minute) +
-          " " +
-          ampm
-      );
+        " : " +
+        (minute < 10 ? "0" + minute : minute) +
+        " " +
+        ampm;
 
-      setDate(days[day] + ", " + date + " " + months[month]);
+      let dateSet = days[day] + ", " + date + " " + months[month];
+      dispatch(getDate(dateSet));
+      dispatch(getTime(timeSet));
     }, 1000);
   }, []);
 
@@ -78,10 +82,10 @@ const date_time = ({ current, lat, lon, timezone }) => {
       {/* Date container */}
       <View>
         <View>
-          <Text style={styles.heading}>{time}</Text>
+          <Text style={styles.heading}>{timeItem}</Text>
         </View>
         <View>
-          <Text style={styles.subHeading}>{date}</Text>
+          <Text style={styles.subHeading}>{dateItem}</Text>
         </View>
         {/* weather item container */}
         <View style={styles.weatherItemContainer}>
@@ -120,7 +124,7 @@ const date_time = ({ current, lat, lon, timezone }) => {
       <View style={styles.rightAlign}>
         <Text style={styles.timeZone}>{timezone}</Text>
         <Text style={styles.latLong}>
-          {lat}M {lon}E
+          {latitude}M {longitude}E
         </Text>
       </View>
     </View>
