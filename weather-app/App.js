@@ -9,8 +9,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import { getWeather } from "./src/store/actions/weatherActions";
-import Form from "./src/components/Form.js";
-import Weather from "./src/store/components/Weather";
+import Form from "./src/components/Form";
+import Weather from "./src/components/Weather";
 
 const App = () => {
   const [search, setSearch] = useState("");
