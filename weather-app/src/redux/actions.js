@@ -2,6 +2,9 @@ export const GET_WEATHER = "GET_DATA";
 export const GET_LAT = "GET_LAT";
 export const GET_LON = "GET_LON";
 
+export const GET_DATE = "GET_DATE";
+export const GET_TIME = "GET_TIME";
+
 //API key and the URL
 const API_KEY = "49cc8c821cd2aff9af04c9f98c36eb74";
 const API_URL =
@@ -43,5 +46,19 @@ export const getLongitude = (longitude) => (dispatch) => {
   dispatch({
     type: GET_LON,
     payload: longitude,
+  });
+};
+
+export const getDate = (date) => (dispatch) => {
+  dispatch({
+    type: GET_DATE,
+    payload: date,
+  });
+};
+
+export const getTime = (time) => (dispatch) => {
+  dispatch({
+    type: GET_TIME,
+    payload: time,
   });
 };

@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import apiCallReducer from "./reducers";
+import { apiCallReducer, settingUpDateReducer } from "./reducers";
 
-const rootReducer = combineReducers({ apiCallReducer });
+const rootReducer = combineReducers({ apiCallReducer, settingUpDateReducer });
 
 export const Store = createStore(rootReducer, applyMiddleware(thunk));

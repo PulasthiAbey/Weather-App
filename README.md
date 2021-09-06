@@ -7,6 +7,7 @@
 5. `npm install @react-navigation/native @react-navigation/native-stack`
 6. `npm install moment-timezone --save`
 7. `npm install expo-location`
+8. `npm install react-redux`
 
 ## Weather API is being used from public agent
 > Weather API used is the open weather. Checkout their [website](https://openweathermap.org/api) for more information

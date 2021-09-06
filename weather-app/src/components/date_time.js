@@ -32,7 +32,6 @@ const months = [
 
 // weather item component to retrieve the data
 const WeatherItem = ({ title, value, unit }) => {
-  
   return (
     <View style={styles.weatherItem}>
       <Text style={styles.weatherItemTitle}>{title}</Text>
