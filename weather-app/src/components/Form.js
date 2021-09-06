@@ -1,13 +1,20 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet, TextInput, Button } from "react-native";
 
 const Form = ({ search, onSetSearch, onSubmit }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Enter city name and press search button</Text>
+      <Text style={styles.heading}>
+        Enter city name and press search button
+      </Text>
       <View>
-        <TextInput style={styles.input} placeholder="Enter city name..." value={search} onChangeText={(val) => onSetSearch(val)} />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter city name..."
+          value={search}
+          onChangeText={(val) => onSetSearch(val)}
+        />
         <Button title="Search" onPress={onSubmit} />
       </View>
     </View>
@@ -17,19 +24,19 @@ const Form = ({ search, onSetSearch, onSubmit }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: "#f1f1f1",
   },
   heading: {
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 20,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#dbdbdb',
+    borderColor: "#dbdbdb",
     borderRadius: 4,
-    backgroundColor: '#fff',
-    color: '#363636',
+    backgroundColor: "#fff",
+    color: "#363636",
     paddingVertical: 5,
     paddingHorizontal: 10,
     fontSize: 16,

@@ -9,7 +9,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import { getWeather } from "./src/store/actions/weatherActions";
-import Form from "./src/store/components/Form";
+import Form from "./src/components/Form.js";
 import Weather from "./src/store/components/Weather";
 
 const App = () => {
