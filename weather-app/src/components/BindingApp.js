@@ -6,12 +6,12 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { useDispatch, useSelector, Provider } from "react-redux";
-import { getWeather } from "./src/store/actions/weatherActions";
+import { useDispatch, useSelector } from "react-redux";
+import { getWeather } from "../store/actions/weatherActions";
 import Form from "./Form";
 import Weather from "./Weather";
 import ListItems from "./ListItems";
-import store from "./src/store/index";
+import store from "../store/index";
 
 const BindingApp = ({ navigation }) => {
   const [search, setSearch] = useState("");
@@ -39,19 +39,17 @@ const BindingApp = ({ navigation }) => {
   };
 
   return (
-    <Provider store={store}>
-      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-        <View style={styles.container}>
-          <Form
-            search={search}
-            onSetSearch={setSearch}
-            onSubmit={searchSubmitHandler}
-          />
-          <ListItems navigation={navigation} />
-          <Weather loading={loading} data={data} error={error} />
-        </View>
-      </TouchableWithoutFeedback>
-    </Provider>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View style={styles.container}>
+        <Form
+          search={search}
+          onSetSearch={setSearch}
+          onSubmit={searchSubmitHandler}
+        />
+        <ListItems navigation={navigation} />
+        <Weather loading={loading} data={data} error={error} />
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
