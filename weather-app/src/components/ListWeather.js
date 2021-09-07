@@ -3,7 +3,20 @@ import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 
 import WeatherData from "./WeatherData";
 
-const ListWeather = ({ loading, data, error }) => {
+const ListWeather = ({ route, navigation }) => {
+  const { city } = route.params;
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { data, error } = useSelector((state) => state.weather);
+
+  dispatch(
+    getWeather(
+      city,
+      () => setLoading(false),
+      () => setLoading(false)
+    )
+  );
+
   if (error) {
     return (
       <View style={styles.container}>

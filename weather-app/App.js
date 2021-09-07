@@ -70,7 +70,7 @@ const App = ({ navigation }) => {
             onSetSearch={setSearch}
             onSubmit={searchSubmitHandler}
           />
-          <ListItems loading={loading} data={data} error={error} />
+          <ListItems />
           <Weather loading={loading} data={data} error={error} />
         </View>
       </TouchableWithoutFeedback>
