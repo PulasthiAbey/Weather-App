@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { GET_WEATHER, SET_ERROR } from '../types';
 
 const initialState = {

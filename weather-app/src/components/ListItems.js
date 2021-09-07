@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Alert,
   FlatList,
   TouchableHighlight,
   StyleSheet,
   View,
+  Text,
 } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+
+const [loading, setLoading] = useState(false);
+const dispatch = useDispatch();
+const { data, error } = useSelector((state) => state.weather);
+
+const pressHandler = (key) => {
+  console.log(key);
+  setLoading(true);
+  dispatch(
+    getWeather(
+      key,
+      () => setLoading(false),
+      () => setLoading(false)
+    )
+  );
+};
 
 const ListItems = ({ navigation }) => {
   return (
@@ -23,12 +41,12 @@ const ListItems = ({ navigation }) => {
         ]}
         renderItem={({ item }) => (
           <TouchableHighlight
-            onPress={() => navigation.navigate("weather", { key })}
+            onPress={() =>
+              navigation.navigate("weather-list", { data }) &&
+              pressHandler(item.key)
+            }
           >
-            <View>
-              {" "}
-              <Text style={styles.item}>{item.key}</Text>
-            </View>
+            <Text style={styles.item}>{item.key}</Text>
           </TouchableHighlight>
         )}
       />

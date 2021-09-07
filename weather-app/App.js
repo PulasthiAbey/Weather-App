@@ -22,9 +22,12 @@ const AppWrapper = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
           <Stack.Screen name="Home" component={App} />
-          <Stack.Screen name="weather" component={Weather} />
           <Stack.Screen name="weather-list" component={WeatherList} />
         </Stack.Navigator>
       </NavigationContainer>

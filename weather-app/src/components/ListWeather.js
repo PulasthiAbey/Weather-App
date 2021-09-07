@@ -1,7 +1,8 @@
 import React from "react";
 import { ScrollView, View, Text, StyleSheet, Image } from "react-native";
 
-const ListWeather = ({ data }) => {
+const ListWeather = ({ route, navigation }) => {
+  const data = route.params;
   const fahrenheit = (data.main.temp * 1.8 - 459.67).toFixed(2);
   const celsius = (data.main.temp - 273.15).toFixed(2);
 
@@ -40,8 +41,6 @@ const ListWeather = ({ data }) => {
           <Text style={styles.boxLabel}>Wind</Text>
           <Text style={styles.boxText}>{data.wind.speed} m/s</Text>
         </View>
-
-        <Button title="Go Back" onPress={() => navigation.navigate("Home")} />
       </ScrollView>
     </View>
   );
