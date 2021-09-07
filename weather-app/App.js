@@ -13,6 +13,7 @@ import { getWeather } from "./src/store/actions/weatherActions";
 import Form from "./src/components/Form";
 import Weather from "./src/components/Weather";
 import ListItems from "./src/components/ListItems";
+import WeatherList from "./src/components/ListWeather";
 import store from "./src/store/index";
 
 const Stack = createStackNavigator();
@@ -24,6 +25,7 @@ const AppWrapper = () => {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={App} />
           <Stack.Screen name="weather" component={Weather} />
+          <Stack.Screen name="weather-list" component={WeatherList} />
         </Stack.Navigator>
       </NavigationContainer>
       <App />

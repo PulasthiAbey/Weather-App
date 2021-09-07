@@ -29,7 +29,7 @@ const Weather = ({ loading, data, error, navigation }) => {
       ) : (
         <WeatherData data={data} />
       )}
-      <Button title="Go Back" onPress={() => navigation.navigate("Home")} />
+      
     </View>
   );
 };

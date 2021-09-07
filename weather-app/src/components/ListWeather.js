@@ -40,6 +40,8 @@ const ListWeather = ({ data }) => {
           <Text style={styles.boxLabel}>Wind</Text>
           <Text style={styles.boxText}>{data.wind.speed} m/s</Text>
         </View>
+
+        <Button title="Go Back" onPress={() => navigation.navigate("Home")} />
       </ScrollView>
     </View>
   );
