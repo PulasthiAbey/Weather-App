@@ -23,8 +23,7 @@ const AppWrapper = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={App} />
-          {/* <Stack.Screen name="suggestions" component={Suggestions} /> */}
-          {/* <Stack.Screen name="map" component={Map} /> */}
+          <Stack.Screen name="weather" component={Weather} />
         </Stack.Navigator>
       </NavigationContainer>
       <App />

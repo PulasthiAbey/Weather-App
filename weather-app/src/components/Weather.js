@@ -1,14 +1,21 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 
-import WeatherData from './WeatherData';
+import WeatherData from "./WeatherData";
 
-const Weather = ({ loading, data, error }) => {
+const Weather = ({ loading, data, error, navigation }) => {
+  // if (key === "" || key === null) {
+  // } else {
+  //   data = key;
+  // }
+
   if (error) {
-    return <View style={styles.container}>
-      <Text style={styles.error}>{error}</Text>
-    </View>;
+    return (
+      <View style={styles.container}>
+        <Text style={styles.error}>{error}</Text>
+      </View>
+    );
   }
 
   if (!loading && !data) {
@@ -17,7 +24,12 @@ const Weather = ({ loading, data, error }) => {
 
   return (
     <View style={styles.container}>
-      { loading ? <ActivityIndicator size="large" color="#00d1b2" /> : <WeatherData data={data} /> }
+      {loading ? (
+        <ActivityIndicator size="large" color="#00d1b2" />
+      ) : (
+        <WeatherData data={data} />
+      )}
+      <Button title="Go Back" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 };
@@ -28,9 +40,9 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   error: {
-    color: 'red',
+    color: "red",
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: "center",
   },
 });
 

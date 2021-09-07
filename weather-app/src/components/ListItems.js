@@ -15,7 +15,12 @@ const ListItems = ({ navigation }) => {
           { key: "Moscow" },
           { key: "Dublin" },
         ]}
-        renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+        renderItem={({ item }) => (
+          <TouchableHighlight onPress={() => navigation.navigate("weather", {key})}>
+            {" "}
+            <Text style={styles.item}>{item.key}</Text>
+          </TouchableHighlight>
+        )}
       />
     </View>
   );
