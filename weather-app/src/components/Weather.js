@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 
 import WeatherData from "./WeatherData";
 
-const Weather = ({ loading, data, error, navigation }) => {
+const Weather = ({ loading, data, error }) => {
   // if (key === "" || key === null) {
   // } else {
   //   data = key;
@@ -29,7 +29,6 @@ const Weather = ({ loading, data, error, navigation }) => {
       ) : (
         <WeatherData data={data} />
       )}
-      
     </View>
   );
 };

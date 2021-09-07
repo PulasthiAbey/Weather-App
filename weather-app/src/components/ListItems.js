@@ -1,5 +1,11 @@
 import React from "react";
-import { Alert, FlatList, TouchableHighlight } from "react-native";
+import {
+  Alert,
+  FlatList,
+  TouchableHighlight,
+  StyleSheet,
+  View,
+} from "react-native";
 
 const ListItems = ({ navigation }) => {
   return (
@@ -16,9 +22,13 @@ const ListItems = ({ navigation }) => {
           { key: "Dublin" },
         ]}
         renderItem={({ item }) => (
-          <TouchableHighlight onPress={() => navigation.navigate("weather", {key})}>
-            {" "}
-            <Text style={styles.item}>{item.key}</Text>
+          <TouchableHighlight
+            onPress={() => navigation.navigate("weather", { key })}
+          >
+            <View>
+              {" "}
+              <Text style={styles.item}>{item.key}</Text>
+            </View>
           </TouchableHighlight>
         )}
       />
