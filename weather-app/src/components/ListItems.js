@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const [loading, setLoading] = useState(false);
 const dispatch = useDispatch();
-const { data, error } = useSelector((state) => state.weather);
+const { data } = useSelector((state) => state.weather);
 
 const pressHandler = (key) => {
   console.log(key);
@@ -41,10 +41,7 @@ const ListItems = ({ navigation }) => {
         ]}
         renderItem={({ item }) => (
           <TouchableHighlight
-            onPress={() =>
-              navigation.navigate("weather-list", { data }) &&
-              pressHandler(item.key)
-            }
+            onPress={() => navigation.navigate("weather", { city: item.key })}
           >
             <Text style={styles.item}>{item.key}</Text>
           </TouchableHighlight>

@@ -5,11 +5,6 @@ import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 import WeatherData from "./WeatherData";
 
 const Weather = ({ loading, data, error }) => {
-  // if (key === "" || key === null) {
-  // } else {
-  //   data = key;
-  // }
-
   if (error) {
     return (
       <View style={styles.container}>
