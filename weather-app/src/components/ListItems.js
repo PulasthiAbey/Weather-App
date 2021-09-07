@@ -7,23 +7,7 @@ import {
   View,
   Text,
 } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-
-const [loading, setLoading] = useState(false);
-const dispatch = useDispatch();
-const { data } = useSelector((state) => state.weather);
-
-const pressHandler = (key) => {
-  console.log(key);
-  setLoading(true);
-  dispatch(
-    getWeather(
-      key,
-      () => setLoading(false),
-      () => setLoading(false)
-    )
-  );
-};
+// import { withNavigation } from "react-navigation";
 
 const ListItems = ({ navigation }) => {
   return (
